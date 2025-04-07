@@ -29,8 +29,7 @@ El código anterior consta de dos funciones principales: `fetchDatosClima(ciudad
 2.  `mostrarDatosClima(data)`: Esta función se encarga de mostrar los datos del clima en la página. Recibe los datos del clima en formato JSON como parámetro. Primero, obtiene las diferentes propiedades relevantes de los datos, como el nombre de la ciudad, el nombre del país, la temperatura, la humedad, la descripción y el icono del clima. Luego, crea elementos HTML apropiados, como encabezados y párrafos, y les asigna el contenido correspondiente utilizando la propiedad `textContent`. También crea un elemento de imagen para mostrar el icono del clima. Finalmente, agrega todos los elementos creados al elemento `<div>` con el ID "datosClima" en tu página.
 
 
-    function mostrarDatosClima(data){
-	
+    	function mostrarDatosClima(data){
 		const divDatosClima = document.getElementById('datosClima')
 		divDatosClima.innerHTML=''
 
