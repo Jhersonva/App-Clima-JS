@@ -20,46 +20,46 @@ El código anterior consta de dos funciones principales: `fetchDatosClima(ciudad
 
 1.  `fetchDatosClima(ciudad)`: Esta función se encarga de hacer una solicitud a la API de OpenWeatherMap para obtener los datos del clima de la ciudad especificada. Recibe el nombre de la ciudad como parámetro. Utiliza la función `fetch()` para enviar una solicitud GET a la URL de la API, incluyendo la ciudad y tu clave de API. Luego, convierte la respuesta en formato JSON utilizando el método `json()`. Finalmente, llama a la función `mostrarDatosClima(data)` pasando los datos obtenidos como argumento.
 
-    function fetchDatosClima(ciudad){
-        fetch(`${urlBase}?q=${ciudad}&appid=${api_key}`)
-        .then(data => data.json())
-        .then(data => mostrarDatosClima(data))
-    }
+    	function fetchDatosClima(ciudad){
+        	fetch(`${urlBase}?q=${ciudad}&appid=${api_key}`)
+        	.then(data => data.json())
+        	.then(data => mostrarDatosClima(data))
+    	}
     
 2.  `mostrarDatosClima(data)`: Esta función se encarga de mostrar los datos del clima en la página. Recibe los datos del clima en formato JSON como parámetro. Primero, obtiene las diferentes propiedades relevantes de los datos, como el nombre de la ciudad, el nombre del país, la temperatura, la humedad, la descripción y el icono del clima. Luego, crea elementos HTML apropiados, como encabezados y párrafos, y les asigna el contenido correspondiente utilizando la propiedad `textContent`. También crea un elemento de imagen para mostrar el icono del clima. Finalmente, agrega todos los elementos creados al elemento `<div>` con el ID "datosClima" en tu página.
 
 
     	function mostrarDatosClima(data){
-		const divDatosClima = document.getElementById('datosClima')
-		divDatosClima.innerHTML=''
+			const divDatosClima = document.getElementById('datosClima')
+			divDatosClima.innerHTML=''
 
-		const ciudadNombre = data.name
-		const paisNombre = data.sys.country
-		const temperatura = data.main.temp
-		const humedad = data.main.humidity
-		const iconTemp = data.weather[0].icon
-		const description = data.weather[0].description
+			const ciudadNombre = data.name
+			const paisNombre = data.sys.country
+			const temperatura = data.main.temp
+			const humedad = data.main.humidity
+			const iconTemp = data.weather[0].icon
+			const description = data.weather[0].description
 
-		const paisTitulo = document.createElement('h2')
-		paisTitulo.textContent = `${ciudadNombre}, ${paisNombre}`
+			const paisTitulo = document.createElement('h2')
+			paisTitulo.textContent = `${ciudadNombre}, ${paisNombre}`
 
-		const humedadInfo = document.createElement('p')
-		humedadInfo.textContent = `La humedad es: ${humedad}%`
+			const humedadInfo = document.createElement('p')
+			humedadInfo.textContent = `La humedad es: ${humedad}%`
 
-		const iconClima = document.createElement('img')
-		iconClima.src = `${urlBaseIcon}${iconTemp}@2x.png`
+			const iconClima = document.createElement('img')
+			iconClima.src = `${urlBaseIcon}${iconTemp}@2x.png`
 
-		const temperaturaInfo = document.createElement('p')
-		temperaturaInfo.textContent = `La temperatura es: ${Math.floor(temperatura-difKelvin)} C°`
+			const temperaturaInfo = document.createElement('p')
+			temperaturaInfo.textContent = `La temperatura es: ${Math.floor(temperatura-difKelvin)} C°`
 
-		const descripcionInfo = document.createElement('p')
-		descripcionInfo.textContent = `La descripcion meteorológica es: ${description}`
+			const descripcionInfo = document.createElement('p')
+			descripcionInfo.textContent = `La descripcion meteorológica es: ${description}`
 
-		divDatosClima.appendChild(paisTitulo)
-		divDatosClima.appendChild(temperaturaInfo)
-		divDatosClima.appendChild(humedadInfo)
-		divDatosClima.appendChild(iconClima)
-		divDatosClima.appendChild(descripcionInfo)
+			divDatosClima.appendChild(paisTitulo)
+			divDatosClima.appendChild(temperaturaInfo)
+			divDatosClima.appendChild(humedadInfo)
+			divDatosClima.appendChild(iconClima)
+			divDatosClima.appendChild(descripcionInfo)
 		}
     
 
