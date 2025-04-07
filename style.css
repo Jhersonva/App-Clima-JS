@@ -1,0 +1,45 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif; 
+  background-color: #f3f3f3; 
+}
+
+/* Estilos para el contenedor principal */
+.contenedor {
+  max-width: 500px; 
+  margin: 0 auto; 
+  padding: 20px; 
+  text-align: center; 
+  background-color: #7bcde6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilo para el título principal */
+h1 {
+  color: #e9e7e7; 
+}
+
+/* Estilos para el campo de entrada de texto */
+input[type="text"] {
+  padding: 10px; 
+  font-size: 16px; 
+  width: 70%; 
+  border-radius: 10px; 
+}
+
+/* Estilos para el botón de búsqueda */
+button {
+  padding: 10px 20px;
+  font-size: 16px; 
+  background-color: #d31212; 
+  color: #ffffff; 
+  border: none; 
+  cursor: pointer; 
+  border-radius: 10px; 
+}
+
+/* Estilos para el área de mostrar los datos del clima */
+#datosClima {
+  margin-top: 20px; 
+  font-size: 18px; 
+}
