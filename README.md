@@ -60,7 +60,7 @@ El código anterior consta de dos funciones principales: `fetchDatosClima(ciudad
 		divDatosClima.appendChild(humedadInfo)
 		divDatosClima.appendChild(iconClima)
 		divDatosClima.appendChild(descripcionInfo)
-	}
+		}
     
 
 ## Uso de la aplicación
